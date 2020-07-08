@@ -23,7 +23,7 @@ def reset_mouse(method):
 class YouTubeController:
 
     def __init__(self):
-
+        pass
         # self.makeWindow()
 
     def __del__(self):
