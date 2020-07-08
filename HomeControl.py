@@ -8,30 +8,18 @@ from time import sleep
 import logging
 logging.basicConfig(filename="/home/sheldon/HomeControl/YTControlLog.log", level=logging.DEBUG)
 logging.debug("Running Youtube control script!!")
-import os
-os.environ['DISPLAY'] = ':0'
 try:
     import pyautogui as pag
+    from decorator import reset_mouse
 except Exception as reason:
-    logging.debug(reason)
+    logging.debug("Fail to load GUI controller. Check if you are using GUI desktop!")
     print(reason)
     exit()
-
-
-screenSize = pag.size()
-
-
-def reset_mouse(method):
-    def reset(*args, **kw):
-        method(*args, **kw)
-        pag.moveTo(0, screenSize[1])
-    return reset
 
 
 class YouTubeController:
 
     def __init__(self):
-        pass
         self.makeWindow()
 
     def __del__(self):
@@ -97,21 +85,23 @@ class YouTubeController:
 
     @reset_mouse
     def enter_play(self, threadName, delay):
+        pag.move(-200, -200, duration=0.5)
         sleep(delay)
         self.clickButton(self.FULL_SCREEN_BUTTON)
         self.clickButton(self.LARGE_PLAY_BUTTON)
 
 
-yc = YouTubeController()
-
 class Handler(http.server.SimpleHTTPRequestHandler):
+
+    def __init__(self):
+        self.yc = YouTubeController()
 
     def do_GET(self):
 
         if self.path.endswith("play_pause"):
-            yc.play_pause()
+            self.yc.play_pause()
         if self.path.endswith("skip_ad"):
-            yc.skip_ad()
+            self.yc.skip_ad()
         # Construct a server response.
         self.send_response(200)
 
@@ -129,9 +119,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length).decode("utf-8") # <--- Gets the data itself
         data = parse_qs(post_data)
-        yc.openURL(data["url"][0])
+        self.yc.openURL(data["url"][0])
         self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
-
 
 
 print('Server listening on port 8000...')
