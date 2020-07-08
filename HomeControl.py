@@ -11,8 +11,9 @@ logging.debug("Running Youtube control script!!")
 try:
     import pyautogui as pag
 except Exception as reason:
-    logging.debug(reason)
-    exit()
+    import os
+    os.environ['DISPLAY'] = ':0'
+    import pyautogui as pag
 
 
 screenSize = pag.size()
