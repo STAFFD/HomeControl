@@ -14,6 +14,7 @@ try:
     import pyautogui as pag
 except Exception as reason:
     logging.debug(reason)
+    print(reason)
     exit()
 
 
