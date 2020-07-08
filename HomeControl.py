@@ -24,7 +24,7 @@ class YouTubeController:
 
     def __init__(self):
 
-        self.makeWindow()
+        # self.makeWindow()
 
     def __del__(self):
         self.destroyWindow()
