@@ -6,7 +6,7 @@ from urllib.parse import parse_qs
 import _thread
 from time import sleep
 import logging
-logging.basicConfig(filename="YTControlLog.log", level=logging.DEBUG)
+logging.basicConfig(filename="./YTControlLog.log", level=logging.DEBUG)
 logging.debug("Running Youtube control script!!")
 import pyautogui as pag
 
