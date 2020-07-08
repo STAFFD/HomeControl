@@ -1,0 +1,40 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides: HomeControl
+# Required-Start: $remote_fs $network
+# Required-Stop: $remote_fs $network
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: HomeControl
+### END INIT INFO
+ 
+start()
+{
+ echo -n "Starting HomeControl"
+ cd "$(dirname "$(find / -type f -name HomeControl.py | head -1)")"
+ python3 HomeControl.py
+ exit0;
+}
+stop()
+{
+ echo -n "Shutting down HomeControl"
+ kill -9 $(ps -ef | grep HomeControl.py | grep -v grep | awk '{print $2}')
+ exit 0;
+}
+case "$1" in
+start)
+ start
+;;
+stop)
+ stop
+;;
+restart)
+ stop
+ start
+;;
+*)
+echo "Usage: $0 {start|stop|restart}"
+exit 0
+;;
+esac
+exit 0
