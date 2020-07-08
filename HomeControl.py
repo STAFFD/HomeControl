@@ -8,8 +8,11 @@ from time import sleep
 import logging
 logging.basicConfig(filename="/home/sheldon/HomeControl/YTControlLog.log", level=logging.DEBUG)
 logging.debug("Running Youtube control script!!")
-import pyautogui as pag
-
+try:
+    import pyautogui as pag
+except Exception as reason:
+    logging.debug(reason)
+    exit()
 
 
 screenSize = pag.size()
