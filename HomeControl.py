@@ -32,7 +32,7 @@ class YouTubeController:
 
     def __init__(self):
         pass
-        # self.makeWindow()
+        self.makeWindow()
 
     def __del__(self):
         self.destroyWindow()
