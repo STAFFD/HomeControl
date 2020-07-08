@@ -33,7 +33,7 @@ class YouTubeController:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
 
-        self.driver = webdriver.Chrome("./chromedriver", options=chrome_options)
+        self.driver = webdriver.Chrome("/home/sheldon/HomeControl/chromedriver", options=chrome_options)
         self.driver.maximize_window()
         self.LARGE_PLAY_BUTTON = "ytp-large-play-button"
         self.FULL_SCREEN_BUTTON = "ytp-fullscreen-button"
