@@ -91,17 +91,17 @@ class YouTubeController:
         self.clickButton(self.LARGE_PLAY_BUTTON)
 
 
-class Handler(http.server.SimpleHTTPRequestHandler):
+yc = YouTubeController()
 
-    def __init__(self):
-        self.yc = YouTubeController()
+
+class Handler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
 
         if self.path.endswith("play_pause"):
-            self.yc.play_pause()
+            yc.play_pause()
         if self.path.endswith("skip_ad"):
-            self.yc.skip_ad()
+            yc.skip_ad()
         # Construct a server response.
         self.send_response(200)
 
@@ -119,7 +119,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length).decode("utf-8") # <--- Gets the data itself
         data = parse_qs(post_data)
-        self.yc.openURL(data["url"][0])
+        yc.openURL(data["url"][0])
         self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
 
 
