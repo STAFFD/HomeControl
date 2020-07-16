@@ -88,7 +88,7 @@ class YouTubeController:
         sleep(delay)
         self.clickButton(self.FULL_SCREEN_BUTTON)
         self.clickButton(self.LARGE_PLAY_BUTTON)
-        pag.move(-200, -200, duration=0.5)
+        pag.move(-200, -200, duration=2)
 
 
 yc = YouTubeController()
