@@ -85,10 +85,10 @@ class YouTubeController:
 
     @reset_mouse
     def enter_play(self, threadName, delay):
-        pag.move(-200, -200, duration=0.5)
         sleep(delay)
         self.clickButton(self.FULL_SCREEN_BUTTON)
         self.clickButton(self.LARGE_PLAY_BUTTON)
+        pag.move(-200, -200, duration=0.5)
 
 
 yc = YouTubeController()
