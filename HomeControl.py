@@ -40,6 +40,7 @@ class YouTubeController:
         self.SKIP_BANNER_BUTTON = "ytp-ad-overlay-close-button"
         self.PLAY_BUTTON = "ytp-play-button"
         self.SKIP_TRAIL_BUTTON = "yt-simple-endpoint"
+        pag.press('f11')
 
     def destroyWindow(self):
         self.driver.close()
