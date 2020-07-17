@@ -1,6 +1,9 @@
 import http.server
 import socketserver
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, NoSuchWindowException, WebDriverException, ElementNotInteractableException, ElementClickInterceptedException
 from urllib.parse import parse_qs
 import _thread
@@ -43,7 +46,10 @@ class YouTubeController:
 
     def clickButton(self, buttonName):
         try:
-            button = self.driver.find_element_by_class_name(buttonName)
+            button = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, buttonName))
+            )
+            # button = self.driver.find_element_by_class_name(buttonName)
             button.click()
             print(buttonName + "clicked successfully!")
         except NoSuchElementException:
@@ -85,9 +91,9 @@ class YouTubeController:
 
     @reset_mouse
     def enter_play(self, threadName, delay):
-        sleep(delay)
         self.clickButton(self.FULL_SCREEN_BUTTON)
         self.clickButton(self.LARGE_PLAY_BUTTON)
+        sleep(delay)
         pag.move(-200, -200, duration=2)
 
 
