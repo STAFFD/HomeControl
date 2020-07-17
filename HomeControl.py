@@ -93,8 +93,8 @@ class YouTubeController:
     def enter_play(self, threadName, delay):
         self.clickButton(self.FULL_SCREEN_BUTTON)
         self.clickButton(self.LARGE_PLAY_BUTTON)
-        sleep(delay)
-        pag.move(-200, -200, duration=2)
+        # sleep(delay)
+        # pag.move(-200, -200, duration=2)
 
 
 yc = YouTubeController()
