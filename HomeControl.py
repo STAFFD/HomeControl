@@ -94,8 +94,8 @@ class YouTubeController:
             print("Window is probaly closed. Creating a new one...")
             self.makeWindow()
             self.driver.get(url)
-        self.clickButton(self.FULL_SCREEN_BUTTON)
-        
+        self.clickButton(self.LARGE_PLAY_BUTTON)
+
 
 yc = YouTubeController()
 
