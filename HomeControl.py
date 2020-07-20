@@ -2,6 +2,7 @@ import http.server
 import socketserver
 from os.path import join
 from selenium import webdriver
+from randomVideos import getRandomVideo
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -45,6 +46,7 @@ class YouTubeController:
         self.PLAY_BUTTON = "ytp-play-button"
         self.SKIP_TRAIL_BUTTON = "yt-simple-endpoint"
         self.windowFullScreen()
+        self.openURL(getRandomVideo())
 
     def destroyWindow(self):
         self.driver.close()
