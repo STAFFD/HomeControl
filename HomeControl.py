@@ -50,9 +50,9 @@ class YouTubeController:
 
     def clickButton(self, buttonName):
         try:
-            # button = WebDriverWait(self.driver, 10).until(
-            #     EC.presence_of_element_located((By.CLASS_NAME, buttonName))
-            # )
+            button = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, buttonName))
+            )
             button = self.driver.find_element_by_class_name(buttonName)
             button.click()
             print(buttonName + "clicked successfully!")
@@ -88,13 +88,17 @@ class YouTubeController:
         pag.press('f')
 
     def openURL(self, url):
+        self.driver.implicitly_wait(3)
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
             print("Window is probaly closed. Creating a new one...")
             self.makeWindow()
             self.driver.get(url)
-        _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
+
+        self.clickButton(self.FULL_SCREEN_BUTTON)
+        self.clickButton(self.LARGE_PLAY_BUTTON)
+        # _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
 
     @reset_mouse
     def enter_play(self, threadName, delay):
