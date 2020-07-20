@@ -28,6 +28,9 @@ class YouTubeController:
     def __del__(self):
         self.destroyWindow()
 
+    def windowFullScreen(self):
+        pag.press('f11')
+
     def makeWindow(self):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
@@ -40,17 +43,17 @@ class YouTubeController:
         self.SKIP_BANNER_BUTTON = "ytp-ad-overlay-close-button"
         self.PLAY_BUTTON = "ytp-play-button"
         self.SKIP_TRAIL_BUTTON = "yt-simple-endpoint"
-        pag.press('f11')
+        self.windowFullScreen()
 
     def destroyWindow(self):
         self.driver.close()
 
     def clickButton(self, buttonName):
         try:
-            button = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.CLASS_NAME, buttonName))
-            )
-            # button = self.driver.find_element_by_class_name(buttonName)
+            # button = WebDriverWait(self.driver, 10).until(
+            #     EC.presence_of_element_located((By.CLASS_NAME, buttonName))
+            # )
+            button = self.driver.find_element_by_class_name(buttonName)
             button.click()
             print(buttonName + "clicked successfully!")
         except NoSuchElementException:
@@ -81,6 +84,9 @@ class YouTubeController:
         self.clickButton(self.SKIP_AD_BUTTON)
         self.clickButton(self.SKIP_BANNER_BUTTON)
 
+    def fullScreen(self):
+        pag.press('f')
+
     def openURL(self, url):
         try:
             self.driver.get(url)
@@ -92,10 +98,8 @@ class YouTubeController:
 
     @reset_mouse
     def enter_play(self, threadName, delay):
-        self.clickButton(self.FULL_SCREEN_BUTTON)
+        self.fullScreen()
         self.clickButton(self.LARGE_PLAY_BUTTON)
-        # sleep(delay)
-        # pag.move(-200, -200, duration=2)
 
 
 yc = YouTubeController()
