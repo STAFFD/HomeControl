@@ -90,8 +90,8 @@ class YouTubeController:
         )
         try:
             while button.get_attribute("title") == "Full screen (f)":
-                # pag.press('f')
-                button.click()
+                pag.press('f')
+                # button.click()
                 print("f\n")
         except NoSuchElementException:
             print("Can not find the "+ self.FULL_SCREEN_BUTTON +"skip"" button!")
@@ -106,9 +106,9 @@ class YouTubeController:
             self.driver.get(url)
 
         # self.clickButton(self.FULL_SCREEN_BUTTON)
-        self.fullScreen()
-        self.clickButton(self.LARGE_PLAY_BUTTON)
-        # _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
+        # self.fullScreen()
+        # self.clickButton(self.LARGE_PLAY_BUTTON)
+        _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
 
     @reset_mouse
     def enter_play(self, threadName, delay):
