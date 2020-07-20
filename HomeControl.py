@@ -50,9 +50,9 @@ class YouTubeController:
 
     def clickButton(self, buttonName):
         try:
-            button = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.CLASS_NAME, buttonName))
-            )
+            # button = WebDriverWait(self.driver, 10).until(
+            #     EC.presence_of_element_located((By.CLASS_NAME, buttonName))
+            # )
             button = self.driver.find_element_by_class_name(buttonName)
             button.click()
             print(buttonName + "clicked successfully!")
@@ -85,10 +85,15 @@ class YouTubeController:
         self.clickButton(self.SKIP_BANNER_BUTTON)
 
     def fullScreen(self):
-        pag.press('f')
+        try:
+            button = self.driver.find_element_by_class_name(self.FULL_SCREEN_BUTTON)
+            while button.get_attribute("title") == "Full screen (f)":
+                pag.press('f')
+        except NoSuchElementException:
+            print("Can not find the "+ self.FULL_SCREEN_BUTTON +"skip"" button!")
+
 
     def openURL(self, url):
-        self.driver.implicitly_wait(3)
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
