@@ -102,7 +102,8 @@ class YouTubeController:
             self.makeWindow()
             self.driver.get(url)
 
-        self.clickButton(self.FULL_SCREEN_BUTTON)
+        # self.clickButton(self.FULL_SCREEN_BUTTON)
+        self.fullScreen()
         self.clickButton(self.LARGE_PLAY_BUTTON)
         # _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
 
