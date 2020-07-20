@@ -85,38 +85,17 @@ class YouTubeController:
         self.clickButton(self.SKIP_AD_BUTTON)
         self.clickButton(self.SKIP_BANNER_BUTTON)
 
-    def fullScreen(self):
-        button = WebDriverWait(self.driver, 100).until(
-            EC.presence_of_element_located((By.CLASS_NAME, self.FULL_SCREEN_BUTTON))
-        )
-        try:
-            while button.get_attribute("title") == "Full screen (f)":
-                pag.press('f')
-                # button.click()
-                print("f\n")
-        except NoSuchElementException:
-            print("Can not find the "+ self.FULL_SCREEN_BUTTON +"skip"" button!")
-
-
+    @reset_mouse
     def openURL(self, url):
-        url = join("https://www.youtube.com/embed", url.split("/")[-1]) + "?autoplay=1"
+        url = join("https://www.youtube.com/embed", url.split("/")[-1])
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
             print("Window is probaly closed. Creating a new one...")
             self.makeWindow()
             self.driver.get(url)
-
-        # self.clickButton(self.FULL_SCREEN_BUTTON)
-        # self.fullScreen()
-        # self.clickButton(self.LARGE_PLAY_BUTTON)
-        # _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
-
-    @reset_mouse
-    def enter_play(self, threadName, delay):
-        self.fullScreen()
-        self.clickButton(self.LARGE_PLAY_BUTTON)
-
+        self.clickButton(self.FULL_SCREEN_BUTTON)
+        
 
 yc = YouTubeController()
 
