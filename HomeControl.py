@@ -1,5 +1,6 @@
 import http.server
 import socketserver
+from os.path import join
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -98,6 +99,7 @@ class YouTubeController:
 
 
     def openURL(self, url):
+        url = join("https://www.youtube.com/embed", url.split("/")[-1]) + "?autoplay=1"
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
@@ -108,7 +110,7 @@ class YouTubeController:
         # self.clickButton(self.FULL_SCREEN_BUTTON)
         # self.fullScreen()
         # self.clickButton(self.LARGE_PLAY_BUTTON)
-        _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
+        # _thread.start_new_thread(self.enter_play, ("Thread-1", 2))
 
     @reset_mouse
     def enter_play(self, threadName, delay):
