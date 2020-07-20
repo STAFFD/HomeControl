@@ -89,6 +89,7 @@ class YouTubeController:
             button = self.driver.find_element_by_class_name(self.FULL_SCREEN_BUTTON)
             while button.get_attribute("title") == "Full screen (f)":
                 pag.press('f')
+                print("f\n")
         except NoSuchElementException:
             print("Can not find the "+ self.FULL_SCREEN_BUTTON +"skip"" button!")
 
