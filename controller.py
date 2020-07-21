@@ -57,6 +57,7 @@ class YouTubeController:
         except AttributeError:
             print("Exited.")
 
+    @reset_mouse
     def clickButton(self, buttonName, wait=False):
         try:
             if wait:
@@ -99,8 +100,6 @@ class YouTubeController:
         assert commmand == "up" or commmand == "down"
         pag.press(commmand)
 
-
-    @reset_mouse
     def openURL(self, url, keep=False):
         self.url = join("https://www.youtube.com/embed", url.split("/")[-1]) if keep else url
         try:
