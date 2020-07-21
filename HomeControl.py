@@ -112,8 +112,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         if self.path.endswith("play_pause"):
             yc.play_pause()
-        if self.path.endswith("skip_ad"):
+        elif self.path.endswith("skip_ad"):
             yc.skip_ad()
+        elif self.pathsetVolume.endswith("playRandom"):
+            yc.openURL(getRandomVideo())
         # Construct a server response.
         self.send_response(200)
 
@@ -131,10 +133,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length).decode("utf-8") # <--- Gets the data itself
         data = parse_qs(post_data)
-        if self.path == "/setVolume":
+
+        if self.path.endswith("setVolume"):
             pag.press(data["set"][0])
-        elif self.path == "/playRandom":
-            yc.openURL(getRandomVideo())
         else:
             yc.openURL(data["url"][0])
             self.receiveHint()
