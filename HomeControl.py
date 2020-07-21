@@ -131,8 +131,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length).decode("utf-8") # <--- Gets the data itself
         data = parse_qs(post_data)
-
-        if self.path == "setVolume":
+        print(self.path)
+        if self.path == "/setVolume":
             pag.press(data["set"][0])
         else:
             yc.openURL(data["url"][0])
