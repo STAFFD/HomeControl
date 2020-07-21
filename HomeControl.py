@@ -131,8 +131,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length).decode("utf-8") # <--- Gets the data itself
         data = parse_qs(post_data)
-        yc.openURL(data["url"][0])
-        self.receiveHint()
+        request = data["url"][0]
+
+        if request == "volume":
+            print(self.path)
+        else:
+            yc.openURL(request)
+            self.receiveHint()
         self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
 
     def receiveHint(self):
