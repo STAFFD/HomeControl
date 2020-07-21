@@ -114,7 +114,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             yc.play_pause()
         elif self.path.endswith("skip_ad"):
             yc.skip_ad()
-        elif self.pathsetVolume.endswith("playRandom"):
+        elif self.path.endswith("playRandom"):
             yc.openURL(getRandomVideo())
         # Construct a server response.
         self.send_response(200)
