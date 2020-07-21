@@ -25,6 +25,7 @@ except Exception as reason:
 class YouTubeController:
 
     def __init__(self):
+        self.url = ""
         self.makeWindow()
 
 
@@ -93,7 +94,7 @@ class YouTubeController:
 
     @reset_mouse
     def openURL(self, url, keep=False):
-        url = join("https://www.youtube.com/embed", url.split("/")[-1]) if keep else url
+        self.url = join("https://www.youtube.com/embed", url.split("/")[-1]) if keep else url
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
@@ -112,10 +113,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         if self.path.endswith("play_pause"):
             yc.play_pause()
+            message = "Success"
         elif self.path.endswith("skip_ad"):
             yc.skip_ad()
+            message = "Success"
         elif self.path.endswith("playRandom"):
             yc.openURL(getRandomVideo(), keep=True)
+            message = "Success"
+        elif self.path.endswith("getVideo"):
+            message = yc.url
         # Construct a server response.
         self.send_response(200)
 
@@ -124,7 +130,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
         # Send message back to client
-        message = "Success"
+
         # Write content as utf-8 data
         self.wfile.write(bytes(message, "utf8"))
         return
