@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52fea332-7ffb-41e8-b917-acbafaf54c7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/HomeControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomeControl.py" afterDir="false" />
-    </list>
+    <list default="true" id="52fea332-7ffb-41e8-b917-acbafaf54c7b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HomeControl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="277">
+              <caret line="122" column="41" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -174,12 +172,12 @@
       <workItem from="1594667143307" duration="130000" />
       <workItem from="1594878139322" duration="323000" />
       <workItem from="1594968959651" duration="8548000" />
-      <workItem from="1595340488161" duration="5649000" />
+      <workItem from="1595340488161" duration="5836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22795000" />
+    <option name="totallyTimeSpent" value="22982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -267,8 +265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HomeControl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="277">
+          <caret line="122" column="41" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
