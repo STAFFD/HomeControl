@@ -108,9 +108,6 @@ yc = YouTubeController()
 
 class Handler(http.server.SimpleHTTPRequestHandler):
 
-    def __init__(self):
-        self.receiveFile = "receive.wav"
-
     def do_GET(self):
 
         if self.path.endswith("play_pause"):
@@ -139,7 +136,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
 
     def receiveHint(self):
-        os.system(f'aplay {self.receiveFile}')
+        os.system(f'aplay {"receive.wav"}')
 
 
 print('Server listening on port 8000...')

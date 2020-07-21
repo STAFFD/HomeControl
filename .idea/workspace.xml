@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52fea332-7ffb-41e8-b917-acbafaf54c7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/HomeControl.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HomeControl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="19">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -186,12 +185,12 @@
       <workItem from="1594667143307" duration="130000" />
       <workItem from="1594878139322" duration="323000" />
       <workItem from="1594968959651" duration="8548000" />
-      <workItem from="1595340488161" duration="587000" />
+      <workItem from="1595340488161" duration="769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17733000" />
+    <option name="totallyTimeSpent" value="17915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -255,8 +254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HomeControl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="19">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
