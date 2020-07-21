@@ -8,9 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, NoSuchWindowException, WebDriverException, ElementNotInteractableException, ElementClickInterceptedException
 from urllib.parse import parse_qs
-import _thread
-from time import sleep
 import logging
+import os
+
 logging.basicConfig(filename="/home/sheldon/HomeControl/YTControlLog.log", level=logging.DEBUG)
 logging.debug("Running Youtube control script!!")
 try:
@@ -27,11 +27,13 @@ class YouTubeController:
     def __init__(self):
         self.makeWindow()
 
+
     def __del__(self):
         self.destroyWindow()
 
     def windowFullScreen(self):
         pag.press('f11')
+
 
     def makeWindow(self):
         chrome_options = webdriver.ChromeOptions()
@@ -51,12 +53,14 @@ class YouTubeController:
     def destroyWindow(self):
         self.driver.close()
 
-    def clickButton(self, buttonName):
+    def clickButton(self, buttonName, wait=False):
         try:
-            # button = WebDriverWait(self.driver, 10).until(
-            #     EC.presence_of_element_located((By.CLASS_NAME, buttonName))
-            # )
-            button = self.driver.find_element_by_class_name(buttonName)
+            if wait:
+                button = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.CLASS_NAME, buttonName))
+                )
+            else:
+                button = self.driver.find_element_by_class_name(buttonName)
             button.click()
             print(buttonName + "clicked successfully!")
         except NoSuchElementException:
@@ -96,13 +100,16 @@ class YouTubeController:
             print("Window is probaly closed. Creating a new one...")
             self.makeWindow()
             self.driver.get(url)
-        self.clickButton(self.LARGE_PLAY_BUTTON)
+        self.clickButton(self.LARGE_PLAY_BUTTON, wait=True)
 
 
 yc = YouTubeController()
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+
+    def __init__(self):
+        self.receiveFile = "receive.wav"
 
     def do_GET(self):
 
@@ -128,7 +135,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         post_data = self.rfile.read(content_length).decode("utf-8") # <--- Gets the data itself
         data = parse_qs(post_data)
         yc.openURL(data["url"][0])
+        self.receiveHint()
         self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
+
+    def receiveHint(self):
+        os.system(f'aplay {self.receiveFile}')
 
 
 print('Server listening on port 8000...')
