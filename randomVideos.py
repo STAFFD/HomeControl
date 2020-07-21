@@ -16,3 +16,7 @@ def getRandomVideo():
 
         content = response.content.decode("utf8")
         return re.findall("https.+\" ", content)[0].split('"')[0]
+
+
+if __name__ == '__main__':
+    print(getRandomVideo())

@@ -48,7 +48,7 @@ class YouTubeController:
         self.PLAY_BUTTON = "ytp-play-button"
         self.SKIP_TRAIL_BUTTON = "yt-simple-endpoint"
         self.windowFullScreen()
-        self.openURL(getRandomVideo())
+        self.openURL(getRandomVideo(), keep=False)
 
     def destroyWindow(self):
         self.driver.close()
@@ -92,8 +92,8 @@ class YouTubeController:
         self.clickButton(self.SKIP_BANNER_BUTTON)
 
     @reset_mouse
-    def openURL(self, url):
-        url = join("https://www.youtube.com/embed", url.split("/")[-1])
+    def openURL(self, url, keep=False):
+        url = join("https://www.youtube.com/embed", url.split("/")[-1]) if keep else url
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
@@ -115,7 +115,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif self.path.endswith("skip_ad"):
             yc.skip_ad()
         elif self.path.endswith("playRandom"):
-            yc.openURL(getRandomVideo())
+            yc.openURL(getRandomVideo(), keep=False)
         # Construct a server response.
         self.send_response(200)
 
