@@ -35,7 +35,7 @@ class YouTubeController:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
         try:
-            self.driver = webdriver.Chrome("chromedriver", options=chrome_options)
+            self.driver = webdriver.Chrome("./chromedriver", options=chrome_options)
         except SessionNotCreatedException:
             print("Failed to find suitable ChromeDriver.")
             print("Please Download a suitable one into the root folder via the following address:")
