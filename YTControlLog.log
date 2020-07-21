@@ -1,0 +1,52 @@
+DEBUG:root:Running Youtube control script!!
+DEBUG:root:Running Youtube control script!!
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:57841/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:57841
+DEBUG:urllib3.connectionpool:http://127.0.0.1:57841 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58029/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58029
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58029 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58051/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58051
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58051 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58189/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58189
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58189 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58218/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58218
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58218 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58269/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58269
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58269 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58311/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58311
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58311 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58341/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58341
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58341 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58387/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58387
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58387 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:root:Running Youtube control script!!
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58410/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"excludeSwitches": ["enable-automation"], "extensions": [], "args": []}}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:58410
+DEBUG:urllib3.connectionpool:http://127.0.0.1:58410 "POST /session HTTP/1.1" 500 1712
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
