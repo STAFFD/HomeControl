@@ -101,7 +101,7 @@ class YouTubeController:
         pag.press(commmand)
 
     def openURL(self, url, keep=False):
-        self.url = join("https://www.youtube.com/embed", url.split("/")[-1]) if keep else url
+        self.url = url if keep else join("https://www.youtube.com/embed", url.split("/")[-1])
         try:
             self.driver.get(url)
         except (WebDriverException, NoSuchWindowException):
