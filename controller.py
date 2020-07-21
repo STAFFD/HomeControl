@@ -103,7 +103,7 @@ class YouTubeController:
     def openURL(self, url, keep=False):
         self.url = url if keep else join("https://www.youtube.com/embed", url.split("/")[-1])
         try:
-            self.driver.get(url)
+            self.driver.get(self.url)
         except (WebDriverException, NoSuchWindowException):
             print("Window is probaly closed. Creating a new one...")
             self.makeWindow()
