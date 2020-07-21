@@ -48,7 +48,7 @@ class YouTubeController:
         self.PLAY_BUTTON = "ytp-play-button"
         self.SKIP_TRAIL_BUTTON = "yt-simple-endpoint"
         self.windowFullScreen()
-        self.openURL(getRandomVideo(), keep=False)
+        self.openURL(getRandomVideo(), keep=True)
 
     def destroyWindow(self):
         self.driver.close()
@@ -115,7 +115,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif self.path.endswith("skip_ad"):
             yc.skip_ad()
         elif self.path.endswith("playRandom"):
-            yc.openURL(getRandomVideo(), keep=False)
+            yc.openURL(getRandomVideo(), keep=True)
         # Construct a server response.
         self.send_response(200)
 
