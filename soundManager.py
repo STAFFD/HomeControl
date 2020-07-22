@@ -1,6 +1,6 @@
 from os.path import join
 import os
-
+from platform import system
 
 class Sounder:
     def __init__(self):
@@ -10,7 +10,7 @@ class Sounder:
 
     def play(self, fileName):
         assert type(fileName) == str
-        if os.name == "posix":
+        if system() == "Darwin":
             os.system(f'afplay {fileName}')
         else:
             os.system(f'mplayer {fileName} -volume 70')
