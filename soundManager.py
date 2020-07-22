@@ -13,7 +13,7 @@ class Sounder:
         if os.name == "posix":
             os.system(f'afplay {fileName}')
         else:
-            os.system(f'aplay {fileName}')
+            os.system(f'mplayer {fileName} -volume 70')
 
     def receive1(self):
         self.play(self.fileNames[0])
